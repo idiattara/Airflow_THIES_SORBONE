@@ -1,41 +1,20 @@
-Install Vscode 
-https://code.visualstudio.com/download
-Install Docker
-https://docs.docker.com/desktop/setup/install/windows-install/
+# Installation et démarrage d'Airflow avec VSCode et Docker sur Windows
 
-create a new file .env and add the following lines:
+## Prérequis
 
-AIRFLOW_IMAGE_NAME=apache/airflow:2.4.2
-AIRFLOW_UID=50000
+- [Installer VSCode](https://code.visualstudio.com/download)
+- [Installer Docker Desktop pour Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
-save docker-compose.yaml file: https://airflow.apache.org/docs/apache-airflow/2.5.1/docker-compose.yaml
-docker-compose up -d
+---
 
-docker-compose up airflow-init
+## Étapes d’installation
 
-docker-compose run --rm airflow-webserver airflow db init
+1. **Créer un nouveau projet dans VSCode**  
+   Ouvre VSCode et crée un nouveau dossier pour ton projet Airflow.
 
+2. **Créer un fichier `.env`**  
+   Dans le dossier projet, crée un fichier `.env` et ajoute les lignes suivantes :
 
-create Admin user using below command:
- Mot de passe par defaut :  airflow airflow
-docker-compose run airflow-worker airflow users create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   ```env
+   AIRFLOW_IMAGE_NAME=apache/airflow:2.4.2
+   AIRFLOW_UID=50000
