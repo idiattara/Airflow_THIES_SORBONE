@@ -9,7 +9,7 @@ $ exit
 $ docker exec -it   airflow-airflow-scheduler-1 /bin/bash
 $ pip install pyspark
 $  exit
--------------------- Intsall packge using root---------------------
+-------------------- Intsall package Using root---------------------
 $ docker exec -it  --user root airflow-airflow-worker-1 /bin/bash
 $ apt update && apt install openjdk-11-jdk -y
 exit
