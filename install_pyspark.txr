@@ -1,0 +1,18 @@
+----------------Copy file in your Container--------------------
+$ docker cp  input.csv airflow-airflow-scheduler-1:/opt/airflow/logs/data
+$ docker cp  input.csv airflow-airflow-worker-1/opt/airflow/logs/data
+
+-------------------Intall Packge in your Container -----------------------
+$docker exec -it  airflow-airflow-worker-1 /bin/bash
+$ pip install pyspark
+$ exit
+$ docker exec -it   airflow-airflow-scheduler-1 /bin/bash
+$ pip install pyspark
+$  exit
+-------------------- Intsall packge using root---------------------
+$ docker exec -it  --user root airflow-airflow-worker-1 /bin/bash
+$ apt update && apt install openjdk-11-jdk -y
+exit
+$ docker exec -it  --user root airflow-airflow-scheduler-1 /bin/bash
+$ apt update && apt install openjdk-11-jdk -y
+exit
